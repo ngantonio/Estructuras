@@ -16,14 +16,14 @@ Estructuras Dinamicas Lineales:
       - Destructor
       
       - Semantica Operacional:
-          - esVacia():logico
+          - esVacia():Logico
           - insertar(elemento: e, entero: posicion)
           - insertarFinal(elemento: e)
           - eliminar(entero: posicion)
           - obtenerLongitud():entero
           - consultar(entero: posicion):elemento
-          - buscar(elemento: e):logico
-          - estaOrdenada():logico
+          - buscar(elemento: e):Logico
+          - estaOrdenada():Logico
           - sublista(elemento: inicio, elemento: fin):Lista
           - invertir()
           - intercambiar(Lista: L)
@@ -31,13 +31,13 @@ Estructuras Dinamicas Lineales:
          
               -Sobrecarga de Operadores:
              
-                 -asignacion(Lista: L):Lista
-                 -igualdad(Lista: L):logico
-                 -desigualdad(Lista: L):logico
-                 -menor(Lista: L):logico
-                 -mayor(Lista: L):logico
-                 -busqueda(entero: posicion):elemento
-                 -concatenacion(Lista: L)
+                 - asignacion(Lista: L):Lista
+                 - igualdad(Lista: L):logico
+                 - desigualdad(Lista: L):logico
+                 - menor(Lista: L):Logico
+                 - mayor(Lista: L):Logico
+                 - busqueda(entero: posicion):elemento
+                 - concatenacion(Lista: L)
                 
           
   - Clase Pila (Stack.h) -Hereda de Lista- , -Estructura LIFO-:
@@ -51,7 +51,7 @@ Estructuras Dinamicas Lineales:
           - apilar(elemento: e)
           - desapilar():elemento
           - consultarTope():elemento
-          - buscar(elemento: e):logico
+          - buscar(elemento: e):Logico
   
   - Clase Cola (Queue.h) -Hereda de Lista- , -Estructura FIFO-:
       - Constructor
@@ -64,14 +64,45 @@ Estructuras Dinamicas Lineales:
           - encolar(elemento: e)
           - desencolar():elemento
           - consultarFrente():elemento
-          - buscar(elemento: e):logico
+          - buscar(elemento: e):Logico
   
-  
-  
+ 
   
 Estructuras Dinamicas Jerarquicas:
 
-  - Arbol N-ario:
+  - Arbol N-ario (ArbolN.h):
+      - Constructor
+      - Constructor(elemento: raiz)
+      - Constructor(elemento: raiz, Lista: hijos)
+      - Constructor Copia
+      - Destructor
+      
+      - Semantica Operacional:
+         - esNulo():Logico
+         - esHoja():Logico
+         - esSubarbol(ArbolN: A2):Logico
+         - obtenerRaiz():elemento
+         - obtenerAltura():entero
+         - obtenerPeso():entero
+         - obtenerHijos():Lista(ArbolN)
+         - obtenerHermanos():Lista(elemento)
+         - insertar(ArbolN: subarbol, elemento: e)
+         - insertar(Lista(elemento): hijos, elemento: e)
+         - eliminar(elemento: e)
+         - buscar(elemento: e)
+         
+       - Recorridos en Arboles:
+         - Preorden():Lista(elemento)
+         - Inorden():Lista(elemento)
+         - Postorden():Lista(elemento)
+         - Niveles():Lista(elemento)
+         
+         
+       - Algoritmos clasicos de Arboles N-arios:
+         - Frontera()
+         - Camino(elemento: e):Lista(elemento)
+          
+                 
   - Arbol Binario:
   - Arbol Binario de Busqueda:
   
