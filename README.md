@@ -10,13 +10,16 @@ A continuacion se especifica detalladamente cada Libreria y su semantica operaci
 
 Estructuras Dinamicas Lineales:
 
-  - Clase Lista (List.h)
+   - Clase Lista (List.h) -Simplemente enlazada-
       - Constructor
       - Constructor Copia
       - Destructor
       
       - Semantica Operacional:
-          - esVacia():Logico
+          - esVacia():logico
+          - insertar(elemento: e, entero: posicion)
+          - insertarFinal(elemento: e)
+          - eliminar(entero: posicion)
           - obtenerLongitud():entero
           - consultar(entero: posicion):elemento
           - buscar(elemento: e):logico
@@ -25,21 +28,46 @@ Estructuras Dinamicas Lineales:
           - invertir()
           - intercambiar(Lista: L)
           - ordenar()
-             - Sobrecarga de Operadores:
-                 - asignacion(Lista: L):Lista
-                 - igualdad(Lista: L):logico
-                 - desigualdad(Lista: L):logico
-                 - menor(Lista: L):logico
-                 - mayor(Lista: L):logico
-                 - busqueda(entero: posicion):elemento
-                 - concatenacion(Lista: L)
+         
+              -Sobrecarga de Operadores:
+             
+                 -asignacion(Lista: L):Lista
+                 -igualdad(Lista: L):logico
+                 -desigualdad(Lista: L):logico
+                 -menor(Lista: L):logico
+                 -mayor(Lista: L):logico
+                 -busqueda(entero: posicion):elemento
+                 -concatenacion(Lista: L)
                 
           
-  - Clase Pila (Stack.h) -Hereda de Lista-:
+  - Clase Pila (Stack.h) -Hereda de Lista- , -Estructura LIFO-:
+      - Constructor
+      - Constructor Copia
+      - Destructor
+      
+      - Semantica Operacional:
+          - esVacia():Logico
+          - obtenerLongitud():entero
+          - apilar(elemento: e)
+          - desapilar():elemento
+          - consultarTope():elemento
+          - buscar(elemento: e):logico
+  
+  - Clase Cola (Queue.h) -Hereda de Lista- , -Estructura FIFO-:
+      - Constructor
+      - Constructor Copia
+      - Destructor
+      
+      - Semantica Operacional:
+          - esVacia():Logico
+          - obtenerLongitud():entero
+          - encolar(elemento: e)
+          - desencolar():elemento
+          - consultarFrente():elemento
+          - buscar(elemento: e):logico
   
   
   
-  - Colas (Hereda de Lista):
   
 Estructuras Dinamicas Jerarquicas:
 
