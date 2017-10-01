@@ -1,16 +1,19 @@
-# Estructuras-
-Estructuras de Datos Dinamicas, implementadas en el lenguaje de programacion C++.
-Dynamic Data Structures, implemented in the C ++ programming language.
+# Estructuras
 
-Son Librerias Desarrolladas por mi persona bajo el principio y los estandares de la Programacion Orientada a Objetos, con las buenas practicas de programacion adquiridas durante los 3 primeros años de estudio en ciencias Computacionales y de importantes textos como -C++ How to program, 6th edition, by Deitel & Deitel-. Implementadas con plantillas -templates- de manera que, pueden ser utilizadas con cualquier tipo de dato primitivo o definido por 
+
+# Estructuras de Datos Dinamicas, implementadas en el lenguaje de programacion C++.
+
+## Dynamic Data Structures, implemented in the C ++ programming language.
+
+Son Librerias Desarrolladas por mi persona bajo el principio y los estandares de la Programacion Orientada a Objetos, con las buenas practicas de programacion adquiridas durante los 3 primeros años de estudio en ciencias Computacionales y de importantes textos como *C++ How to program, 6th edition, by Deitel & Deitel*. Implementadas con plantillas *(templates)* de manera que, pueden ser utilizadas con cualquier tipo de dato primitivo o definido por el usuario, haciedo uso de apuntadores como la forma de enlace para cada nodo de las mismas.
 
 En cada libreria se encuentran desarrollados los algoritmos basicos que dan funcionamiento a cada una de las estructuras creadas, ademas de algoritmos que resuelven diversos problemas triviales y academicos que se presentan para cada estructura, encontrados en bibliografias destinadas al aprendizaje y la construccion de algoritmos.
 
 A continuacion se especifica detalladamente cada Libreria y su semantica operacional:
 
-Estructuras Dinamicas Lineales:
+## Estructuras Dinamicas Lineales:
 
-   - Clase Lista (List.h) -Simplemente enlazada-
+ - Clase Lista (List.h) *Simplemente enlazada*
       - Constructor
       - Constructor Copia
       - Destructor
@@ -29,18 +32,18 @@ Estructuras Dinamicas Lineales:
           - intercambiar(Lista: L)
           - ordenar()
          
-              -Sobrecarga de Operadores:
-             
-                 - asignacion(Lista: L):Lista
-                 - igualdad(Lista: L):logico
-                 - desigualdad(Lista: L):logico
-                 - menor(Lista: L):Logico
-                 - mayor(Lista: L):Logico
-                 - busqueda(entero: posicion):elemento
-                 - concatenacion(Lista: L)
+             -Sobrecarga de Operadores:
+            
+               -asignacion(Lista: L):Lista
+               -igualdad(Lista: L):logico
+               -desigualdad(Lista: L):logico
+               -menor(Lista: L):Logico
+               -mayor(Lista: L):Logico
+               -busqueda(entero: posicion):elemento
+               -concatenacion(Lista: L)
                 
           
-  - Clase Pila (Stack.h) -Hereda de Lista- , -Estructura LIFO-:
+  - Clase Pila (Stack.h) *Hereda de Lista* , *Estructura LIFO*:
       - Constructor
       - Constructor Copia
       - Destructor
@@ -53,7 +56,7 @@ Estructuras Dinamicas Lineales:
           - consultarTope():elemento
           - buscar(elemento: e):Logico
   
-  - Clase Cola (Queue.h) -Hereda de Lista- , -Estructura FIFO-:
+  - Clase Cola (Queue.h) *Hereda de Lista* , *Estructura FIFO*:
       - Constructor
       - Constructor Copia
       - Destructor
@@ -68,7 +71,7 @@ Estructuras Dinamicas Lineales:
   
  
   
-Estructuras Dinamicas Jerarquicas:
+## Estructuras Dinamicas Jerarquicas:
 
   - Arbol N-ario (ArbolN.h):
       - Constructor
@@ -107,6 +110,6 @@ Estructuras Dinamicas Jerarquicas:
   - Arbol Binario de Busqueda:
   
   
-Estructuras DInamicas Multi-enlazadas:
+## Estructuras DInamicas Multi-enlazadas:
 
   - Grafos
