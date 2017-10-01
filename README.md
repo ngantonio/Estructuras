@@ -1,7 +1,7 @@
 # Estructuras
 
 
-# Estructuras de Datos Dinamicas, implementadas en el lenguaje de programacion C++.
+## Estructuras de Datos Dinamicas, implementadas en el lenguaje de programacion C++.
 
 ## Dynamic Data Structures, implemented in the C ++ programming language.
 
@@ -13,7 +13,8 @@ A continuacion se especifica detalladamente cada Libreria y su semantica operaci
 
 ## Estructuras Dinamicas Lineales:
 
- - Clase Lista (List.h) *Simplemente enlazada*
+ #### Clase Lista (List.h) *Simplemente enlazada*
+   - 
       - Constructor
       - Constructor Copia
       - Destructor
@@ -32,15 +33,15 @@ A continuacion se especifica detalladamente cada Libreria y su semantica operaci
           - intercambiar(Lista: L)
           - ordenar()
          
-             -Sobrecarga de Operadores:
+      - Sobrecarga de Operadores:
             
-               -asignacion(Lista: L):Lista
-               -igualdad(Lista: L):logico
-               -desigualdad(Lista: L):logico
-               -menor(Lista: L):Logico
-               -mayor(Lista: L):Logico
-               -busqueda(entero: posicion):elemento
-               -concatenacion(Lista: L)
+          - asignacion(Lista: L):Lista
+          - igualdad(Lista: L):logico
+          - desigualdad(Lista: L):logico
+          - menor(Lista: L):Logico
+          - mayor(Lista: L):Logico
+          - busqueda(entero: posicion):elemento
+          - concatenacion(Lista: L)
                 
           
   - Clase Pila (Stack.h) *Hereda de Lista* , *Estructura LIFO*:
