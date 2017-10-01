@@ -79,7 +79,7 @@ A continuacion se especifica detalladamente cada Libreria y su semantica operaci
 ## Estructuras Dinamicas Jerarquicas:
 
 
-#### Arbol N-ario *clase ArbolN.h*:
+#### Arbol N-ario. *clase ArbolN.h*:
 
 Se define un Arbol N-ario A, como un grafo conexo y aciclico, que puede tener N ramas o hijos. Su definicion es estrictamente recursiva para cada hijo, la representacion en memoria se realiza mediante listas de nodos enlazadas por apuntadores, donde cada nodo tiene un apuntador a su primer hijo (hijo de más a la izquierda) y otro a su hermano derecho.
 
@@ -117,7 +117,7 @@ Se define un Arbol N-ario A, como un grafo conexo y aciclico, que puede tener N 
      - Camino(elemento: e):Lista(elemento)
           
           
-#### Arbol Binario *clase ArbolB.h*:
+#### Arbol Binario. *clase ArbolB.h*:
 
 Se define un Arbol Binario A, como un grafo conexo y aciclico que solamente posee 2 ramas o hijos, hijo Izquierdo e hijo derecho. Su definicion es estrictamente recursiva para cada hijo. La representacion en memoria se realiza mediante listas enlazadas de nodos, donde cada nodo esta autoreferenciado 2 veces. (apuntador a nodo: hijoIzq, hijoDer)
 
@@ -157,7 +157,7 @@ Se define un Arbol Binario A, como un grafo conexo y aciclico que solamente pose
    - Algoritmos clasicos de Arboles binarios: 
     
      - espejo():ArbolB
-     - diametro:entero
+     - diametro():entero
      - Completo():Logico
      - zurdo():Logico
      - hoja():Logico
@@ -168,4 +168,41 @@ Se define un Arbol Binario A, como un grafo conexo y aciclico que solamente pose
           
 ## Estructuras Dinamicas Multi-enlazadas:
 
-  - Grafos
+#### Digrafo. *clase Digrafo.h*  
+
+Se define a *G(V,A,λ)* como un grafo Dirigido pesado. Para el caso de esta implementacion, si el peso se omite sera establecido en 0.0. Su representacion en memoria es mediante listas enlazadas de adyacencia. Donde, existe una lista principal de vertices (nodos), y cada vertice *V* de esa lista, tiene un apuntador a una lista que guarda informacion sobre sus vertices adyacentes. De esta manera se representan las aristas del grafo *<V,W>*
+
+   - Constructor
+   - Constructor(Lista<elemento>: vertices)
+   - Constructor copia
+   - Destructor
+
+
+##### Semantica Operacional:
+   - esVacio():Logico
+   - existeVertice(vertice: v):Logico
+   - existeArco(vertice: v,w):Logico
+   - obtenerOrden():entero
+   - obtenerVertices():Lista<vertice>
+   - obtenerVerticesFuente():Lista<vertice>
+   - obtenerVerticesSumideros():Lista<vertice>
+   - obtenerArcos():Lista<arcos>
+   - establecerVertice(vertice: v)
+   - establecerArco(vertice: v,w)
+   - establecerArco(Arco<vertice>: Ei)
+   - borrarVertice(elemento: v)
+   - borrarArco(elemento: v,w)
+   - borrarArco(Arco<vertice>: Ei)
+   - obtenerPredecesores(vertice: v)
+   - obtenerSucesores(vertice: v)
+   
+
+   - Recorridos en en un Grafo:
+    
+     - DFS():Lista<(vertices)
+     - BFS():Lista(vertices)
+  
+                
+   - Algoritmos clasicos de Grafos: 
+    
+     - grafoCompleto():Logico
