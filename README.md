@@ -85,22 +85,21 @@ A continuacion se especifica detalladamente cada Libreria y su semantica operaci
    - Constructor(elemento: raiz, Lista: hijos)
    - Constructor Copia
    - Destructor
-      
-   ##### Semantica Operacional:
-    - 
-      - esNulo():Logico
-      - esHoja():Logico
-      - esSubarbol(ArbolN: A2):Logico
-      - obtenerRaiz():elemento
-      - obtenerAltura():entero
-      - obtenerPeso():entero
-      - obtenerHijos():Lista(ArbolN)
-      - obtenerHermanos():Lista(elemento)
-      - insertar(ArbolN: subarbol, elemento: e)
-      - insertar(Lista(elemento): hijos, elemento: e)
-      - eliminar(elemento: e)
-      - buscar(elemento: e)
-         
+
+    ##### Semantica Operacional:
+    - esNulo():Logico
+    - esHoja():Logico
+    - esSubarbol(ArbolN: A2):Logico
+    - obtenerRaiz():elemento
+    - obtenerAltura():entero
+    - obtenerPeso():entero
+    - obtenerHijos():Lista(ArbolN)
+    - obtenerHermanos():Lista(elemento)
+    - insertar(ArbolN: subarbol, elemento: e)
+    - insertar(Lista(elemento): hijos, elemento: e)
+    - eliminar(elemento: e)
+    - buscar(elemento: e)
+
    - Recorridos en Arboles:
     
      - Preorden():Lista(elemento)
