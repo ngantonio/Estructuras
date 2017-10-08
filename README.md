@@ -9,5 +9,5 @@ Son Librerias Desarrolladas por mi persona bajo el principio y los estandares de
 
 En cada libreria se encuentran desarrollados los algoritmos basicos que dan funcionamiento a cada una de las estructuras creadas, ademas de algoritmos que resuelven diversos problemas triviales y academicos que se presentan para cada estructura, encontrados en bibliografias destinadas al aprendizaje y la construccion de algoritmos.
 
-A continuacion se especifica detalladamente cada Libreria y su semantica operacional:
+Cada directorio tendra un archivo README donde se especifica detalladamente cada Libreria y su semantica operacional.
 
