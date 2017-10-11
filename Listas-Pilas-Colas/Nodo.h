@@ -9,17 +9,17 @@ template <class type>
 class Nodo{
 
 public:
-	Nodo(type);
-	void setDatos();
-	void setSiguiente(Nodo *);
-	void setDatos(type);
-	type getDatos();
-	Nodo<type>* getSiguiente();
+    Nodo(type);
+    void setDatos();
+    void setSiguiente(Nodo *);
+    void setDatos(type);
+    type getDatos();
+    Nodo<type>* getSiguiente();
 
 private:
 
-	type datos;
-	Nodo <type> *sig;
+    type datos;
+    Nodo <type> *sig;
 
 };
 
@@ -28,28 +28,28 @@ private:
 template <typename type>
 Nodo<type>::Nodo(type info)
 {
-	setDatos(info);
-	sig = NULL;
+    setDatos(info);
+    sig = NULL;
 }
 
 template <typename type>
 void Nodo<type>::setDatos(type info){
-	datos = info;
+    datos = info;
 }
 
 template <typename type>
 void Nodo< type >::setSiguiente(Nodo *next){
-	sig = next;
+    sig = next;
 } 
 
 template <typename type>
 type Nodo<type>::getDatos(){
-	return datos;
+    return datos;
 }
 
 template <typename type>
 Nodo<type>* Nodo<type>::getSiguiente(){
-	return sig;
+    return sig;
 }
 
 
