@@ -1,13 +1,14 @@
 ## Estructuras Dinamicas Jerarquicas:
 
 
-#### Arbol N-ario. *clase ArbolN.h*:
+#### Arbol N-ario. *clase NTree.hpp*:
 
 Se define un Arbol N-ario A, como un grafo conexo y aciclico, que puede tener N ramas o hijos. Su definicion es estrictamente recursiva para cada hijo, la representacion en memoria se realiza mediante listas de nodos enlazadas por apuntadores, donde cada nodo tiene un apuntador a su primer hijo (hijo de más a la izquierda) y otro a su hermano derecho.
 
    - Constructor
    - Constructor(elemento: raiz)
-   - Constructor(elemento: raiz, Lista: hijos)
+   - Constructor(elemento: raiz, Lista(elemento): hijos)
+   - Constructor(elemento: raiz, Lista(ArbolN): hijos)
    - Constructor Copia
    - Destructor
 
@@ -19,11 +20,11 @@ Se define un Arbol N-ario A, como un grafo conexo y aciclico, que puede tener N 
    - obtenerRaiz():elemento
    - obtenerAltura():entero
    - obtenerPeso():entero
-   - obtenerHijos():Lista(ArbolN)
-   - obtenerHermanos():Lista(elemento)
-   - insertar(ArbolN: subarbol, elemento: e)
-   - insertar(Lista(elemento): hijos, elemento: e)
-   - eliminar(elemento: e)
+   - obtenerHijos():Lista(elemento)
+   - insertar(elemento: padre, elemento: hijo)
+   - insertar(elemento: padre, ArbolN: subarbol)
+   - insertar(elemento: padre, Lista(elemento): hijos)
+   - eliminar(elemento: padre)
    - buscar(elemento: e):Logico
 
    - Recorridos en un arbol N-ario:
@@ -36,16 +37,16 @@ Se define un Arbol N-ario A, como un grafo conexo y aciclico, que puede tener N 
    - Algoritmos clasicos de Arboles N-arios: 
     
      - Frontera()
-     - Camino(elemento: e):Lista(elemento)
+     - Camino(elemento: extremo):Lista(elemento) desde raiz hasta el elemento extremo.
           
           
-#### Arbol Binario. *clase ArbolB.h*:
+#### Arbol Binario. *clase BTree.h*:
 
 Se define un Arbol Binario A, como un grafo conexo y aciclico que solamente posee 2 ramas o hijos, hijo Izquierdo e hijo derecho. Su definicion es estrictamente recursiva para cada hijo. La representacion en memoria se realiza mediante listas enlazadas de nodos, donde cada nodo esta autoreferenciado 2 veces. (apuntador a nodo: hijoIzq, hijoDer)
 
    - Constructor
    - Constructor(elemento: raiz)
-   - Constructor(elemento: raiz, ArbolB: HijoIzq, ArbolB: HijoDer)
+   - Constructor(elemento: raiz, ArbolB: HijoIzquierdo, ArbolB: HijoDerecho)
    - Constructor(Cadena: "PREORDEN"; Lista: recorridoPre; Cadena: "INOREDEN"; Lista: recorridoIn)
    - Constructor(Cadena: "INORDEN"; Lista: recorridoIn; Cadena: "POSTORDEN"; Lista: recorridoPost)
    - Constructor Copia
@@ -83,7 +84,5 @@ Se define un Arbol Binario A, como un grafo conexo y aciclico que solamente pose
      - Completo():Logico
      - zurdo():Logico
      - hoja():Logico
-     - menor(ArbolB: A2):Logico
-     - isomorfo():Logico
      - igual():Logico
-          
+        

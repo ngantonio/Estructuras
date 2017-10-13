@@ -18,7 +18,7 @@ all: default
 # incluye los archivos .o y .c que estan en el directorio actual
 OBJECTS = $(patsubst %.cpp, %.o, $(wildcard *.cpp))
 # incluye los archivos.h que estan en el directorio actual
-HEADERS = $(wildcard *.h)
+HEADERS = $(wildcard *.hpp)
 # compila automaticamente solo archivos fuente que se han Modificado
 # $< es el primer prerrequisito, generalmente el archivofuente
 # $@ nombre del archivo que se esta Generando, archivo objeto
