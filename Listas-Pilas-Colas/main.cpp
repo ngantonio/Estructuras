@@ -1,213 +1,177 @@
-#include "Pila.h"
-#include "Cola.h"
-#include "Lista.h"
+                     /***** TEST LISTAS PILAS Y COLAS. © GABRIEL A.OLIVEIRA N. */
+#include "List.hpp"
+#include "Stack.hpp"
+#include "Queue.hpp"
 #include <iostream>
 #include <cstdlib>
 using namespace std;
 
-void intercambio();
-void intercambio1(List<char> *L, int medio, int  n, int i);
-void pila();
-void lista();
-void cola();
+void test_stack();
+void test_list();
+void test_queue();
 
 int main(){
 
-    srand(time(NULL));
 
-    //pila();
-    lista();
-    //cola();
-
-    List<Queue<int> > L;
-
-
-
-    
+    test_list();
+    //test_stack();
+    //test_queue();
 return 0;
 }
 
-void intercambio1(List<char> *L, int medio, int n, int i){
+void test_list(){
 
-    char aux1, aux2;
+    cout << endl << endl << "*************************************************************************************"<< endl;
+    cout << endl <<"+ Construyamos una lista de elementos aleatorios con 10 elementos y una semilla de 15 llamada Lrand: "<< endl;
+    List<int> Lrand(10,15);
+        cout << Lrand;
 
-    if(i <= medio)
-    {
-        if(i%2 == 0 && n%2 == 0)
-        {
-            aux1 = L->consult(i);
-            aux2 = L->consult(n);
-            L->remove(n);
-            L->remove(i);
-            L->insert(aux2,i);
-            L->insert(aux1,n);
-            intercambio1(L,medio,n-1, i+1);
+    cout << endl <<"+ Construyamos una lista de elementos repetidos con 10 elementos llamada Lrep: " << endl;
+    List<int> Lrep;
+
+    Lrep.push_back(1);
+    Lrep.push_back(18);
+    Lrep.push_back(3);
+    Lrep.push_back(3);
+    Lrep.push_back(5);
+    Lrep.push_back(20);
+    Lrep.push_back(18);
+    Lrep.push_back(15);
+    Lrep.push_back(1);
+    Lrep.push_back(12);
+    Lrep.push_back(20);
+    Lrep.push_back(3);
+        cout << Lrep;
+
+    cout << endl<< "+ Construyamos una lista de los numeros pares del 1 al 30 llamada Lpair: " << endl;
+    List<int> Lpair;
+    int pos = 1;
+    for(int i = 1; i<=30; i++){
+        if(i%2 == 0){
+            Lpair.insert(i,pos);
+            pos++;
         }
-        else
-        {
-            if(i%2 == 0)
-                intercambio1(L,medio,n-1, i);
-            else
-                intercambio1(L,medio,n, i+1);
-        }
-
     }
+        cout << Lpair;
+
+   cout << endl<< "- Invirtamos a Lrep: " << endl;
+   Lrep.reverse();
+   cout << Lrep;
+
+   cout << endl<< "- Comprimamos a Lrep: " << endl;
+   List<int> LrepZipped;
+   LrepZipped = Lrep.zipped();
+   cout << LrepZipped;
+
+    cout << endl<< "- Lrep y LrepZipped son iguales?: " << boolalpha << (LrepZipped == Lrep) << endl;
+
+    cout << endl<< "- Lrep y Lrep son iguales?: "<< boolalpha<< (Lrep == Lrep) << endl;
+
+    cout << endl<< " -Obtengamos una Sub lista de Lpair, desde el numero 8 hasta el numero 24: " << endl;
+    cout << Lpair.sub(8,24);
+
+    cout << endl<< " -Obtengamos una Sub lista de Lpair, desde el numero 24 hasta el numero 8: " << endl;
+    cout << Lpair.sub(24,8);
+
+    cout << endl<< "- Lpair esta ordenada?: " <<boolalpha << Lpair.isOrdenate() << endl << endl;
+    
+
+    cout << endl<< "- El elemento 20 se encuentra dentro de Lpair?: " << boolalpha << Lpair.consult(20) << endl;
+
+    cout << endl<< "- Cual es el elemento dentro dela posicion 11 de Lpair?: "<< Lpair.search(11) << endl;
+
+    cout << endl<< "- El elemento 50 se encuentra dentro de Lpair?: " << Lpair.consult(50) << endl;
+    
+    cout << endl<< "- Intercambiemos a Lrand con Lpair: " << endl;
+    Lrand.swap(Lpair);
+    cout << "\t Lrand ahora es: " << Lrand <<"\t Lpair ahora es: " << Lpair << endl;
+
+    cout << "- Eliminemos el elemento 24 de Lrand: " << endl;
+    Lrand.removeForElement(24);
+    cout << "\t Lrand: "  << Lrand; 
+
+    cout << "- Eliminemos al elemento que esta en la posicion 7 de Lrand. el elemento eliminado fue: " << Lrand.removeForPosition(7)<< endl;
+    cout << "\t Lrand: "  << Lrand; 
+
+    cout << "-Lrand es mayor a Lpair?: " << boolalpha << (Lrand > Lpair)<< endl << endl;
+
+    cout << "- Concatenemos a Lrand con Lpair: " << endl;
+    Lrand+=Lpair;
+    cout << "\t Lrand: "  << Lrand; 
+    cout << endl << endl << "*************************************************************************************"<< endl << endl << endl;
 
 }
 
-void pila(){
 
-    Stack<int> P1;
+
+void test_stack(){
+
+    Stack<int> P;
 
     int total,ele;
 
-    cout <<"P1 Esta Vacia?: " << boolalpha << P1.empty()<<endl;
-
-    cout << "\nIngresa el numero de elementos de la Pila 1: ";
-    cin>> total;
-
-    for(int i = 1; i<= total; i++)
-    {
-        cout <<"Ingresa el elemento: " << i << ": ";
-        cin >> ele;
-        P1.push(ele);
-    }
-    cout<<endl << P1<< endl;
+    cout << endl << endl << "*************************************************************************************"<< endl;
     
-    cout <<"P1 Esta Vacia?: " << boolalpha << P1.empty()<<endl;
+    P.push(6);
+    P.push(5);
+    P.push(4);
+    P.push(4);
+    P.push(4);
+    P.push(4);
+    P.push(3);
+    P.push(2);
+    P.push(1);
+    cout << P<< endl;
 
-    P1.pop();
-    cout << "\nSe desapilo el tope de la pila 1, el tope ahora es:  " << P1.top()<< endl;
+    cout << endl <<"- P esta Vacia?: "<< boolalpha << P.empty()<< endl;
+    cout << "- El tope de la Pila es: " << P.top()<< endl;
+    cout << "- Cuantas veces aparece el elemento 4?: " << P.occurrences(4) << endl;
+    cout << "- Desapilando hasta vaciar: " << endl;
 
-    cout<<endl << P1<< endl;
-
-    cout << P1.ocurrencias(7) << endl;
-
-
-}
-
-void intercambio(){
-
-    char entrada[50];
-    int n,medio,j;
-    List<char> L;
-
-    cout <<"\n Ingresa una cadena de texto: ";
-    cin.getline(entrada,50);
-    n = strlen(entrada);
-    
-    cout << "la cadena fue: " << entrada << " y su longitud es de: " << n <<endl;
-
-    for(int i = 1; i<=n; i++)
-        L.insert(entrada[i-1],i);
-
-    j = 1;
-    medio = n/2;
-    intercambio1(&L,medio,n,j);
-    cout << endl << endl;
-    cout<< L << endl;
-    cout<< endl << endl;
-
-}
-
-
-void lista(){
-
-    //intercambio();
-    List<int> L;
-    List<int> L1;
-    List<int> aux;
-
-    int j =1;
-
-
-    for(int i = 1; i<=15; i++){
-        if(i%2 == 0)
-        {
-            L.insert(i-1,j);
-            L1.insert(i,j);
-            j++;
-        }
-            
+    while(!P.empty()){
+        cout << endl << "*************************************"<< endl;
+        int e = P.pop();
+        cout << "\tSe desapilo el elemento: " << e << endl;
+        cout << P ;
     }
-        
-    cout<< L << endl;
-    cout<< L1 << endl;
-
-    if(L == L1)
-        cout << "son iguales" << endl;
-    else
-        cout << "Son distintas" << endl;
-
-
-    if(L != L1)
-        cout << "Son distintas" << endl;
-    else
-        cout << "son iguales" << endl;
-
-
-    if(L< L1)
-        cout << "L es menor a L1" << endl;
-    else
-        cout << "L no es menor a L1" << endl;
-
-
-    aux = L;
-    cout<< aux << endl;
-
-    cout << endl << aux[20] << endl;
-
-
-    L.swap(L1);
-    cout << "L despues del intercambio es: " << endl;
-    cout<< L << endl;
-    cout << "L1 despues del intercambio es: " << endl;
-    cout<< L1<< endl;
-
-    cout << "concatenacion: " << endl;
-    L+= L1;
-    cout<< L << endl;
-
-
-
-    cout << "Sublista de L: "<<endl;
-    List<int> aux1(L.sub(14,4));
-    cout<< aux1 << endl << endl;
-
-    cout << boolalpha << aux1.isOrdenate() << endl;
-    
-
-    List<int> B;
-
-    for(int i = 1; i<= 8 ; i++){
-        B.insert(1+ rand() %20,i);
-    }
-
-
-    cout << boolalpha << B.isOrdenate() << endl;
-    B.sort();
-
-    cout << B << endl;
+    cout << endl <<"- P esta Vacia?: "<< boolalpha << P.empty()<< endl;
+    cout << endl << "*************************************************************************************"<< endl << endl <<endl;
 
 
 
 }
 
-void cola(){
 
-    Queue<int> cola1;
-    Queue<int> c;
+void test_queue(){
 
+    Queue<int> Q;
 
-    for(int i = 1; i<= 10; i++){
-        cola1.enqueue(1+ rand() %20);
+    cout << endl << endl << "*************************************************************************************"<< endl;
+    
+    Q.enqueue(10);
+    Q.enqueue(9);
+    Q.enqueue(8);
+    Q.enqueue(7);
+    Q.enqueue(6);
+    Q.enqueue(5);
+    Q.enqueue(4);
+    Q.enqueue(3);
+    Q.enqueue(2);
+    Q.enqueue(1);
+
+    cout << Q<< endl;
+
+    cout << endl <<"- Q esta Vacia?: "<< boolalpha << Q.empty()<< endl;
+    cout << "- El frente de la cola es es: " << Q.front()<< endl;
+    cout << "- Desencolando hasta vaciar: " << endl;
+
+    while(!Q.empty()){
+        cout << endl << "*************************************"<< endl;
+        int e = Q.dequeue();
+        cout << "\tSe desencoló el elemento: " << e << endl;
+        cout << Q ;
     }
-
-    //cout << cola1<< endl;
-    cola1.sort();
-    //cout << cola1<< endl;
-
-
-
+    cout << endl <<"- Q esta Vacia?: "<< boolalpha << Q.empty()<< endl;
+    cout << endl << "*************************************************************************************"<< endl << endl <<endl;
 
 }

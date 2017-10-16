@@ -1,8 +1,9 @@
 ## Estructuras Dinamicas Lineales:
 
-#### Clase Lista (List.h) *Simplemente enlazada*
+#### Clase Lista (List.hpp) *Doblemente enlazada*
  - 
       - Constructor
+      - Constructor de elementos alataorios
       - Constructor Copia
       - Destructor
       
@@ -10,15 +11,16 @@
           - esVacia():Logico
           - insertar(elemento: e, entero: posicion)
           - insertarFinal(elemento: e)
-          - eliminar(entero: posicion)
+          - eliminar(entero: posicion):elemento
+          - eliminar(elemento e):logico
           - obtenerLongitud():entero
           - consultar(entero: posicion):elemento
           - buscar(elemento: e):Logico
           - estaOrdenada():Logico
           - sublista(elemento: inicio, elemento: fin):Lista
           - invertir()
+          - comprimir():Lista
           - intercambiar(Lista: L)
-          - ordenar()
          
       - Sobrecarga de Operadores:
             
@@ -31,10 +33,9 @@
           - concatenacion(Lista: L)
                 
           
-#### Clase Pila (Stack.h) *Hereda de Lista* , *Estructura LIFO*:
+#### Clase Pila (Stack.hpp) *Hereda de Lista* , *Estructura LIFO*:
  -
       - Constructor
-      - Constructor Copia
       - Destructor
       
       - Semantica Operacional:
@@ -43,11 +44,10 @@
           - apilar(elemento: e)
           - desapilar():elemento
           - consultarTope():elemento
-          - buscar(elemento: e):Logico
 
 
 
-#### Clase Cola (Queue.h) *Hereda de Lista* , *Estructura FIFO*:
+#### Clase Cola (Queue.hpp) *Hereda de Lista* , *Estructura FIFO*:
  -
       - Constructor
       - Constructor Copia
@@ -59,6 +59,5 @@
           - encolar(elemento: e)
           - desencolar():elemento
           - consultarFrente():elemento
-          - buscar(elemento: e):Logico
   
  
